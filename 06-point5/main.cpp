@@ -1,13 +1,6 @@
 // Copyright (c) Andreas Fertig.
 // SPDX-License-Identifier: MIT
 
-
-
-#if defined (_MSC_VER)
-#  define not !
-#endif /* MSVC */
-
-
 struct Point
 {
     int x;
@@ -20,12 +13,12 @@ struct Point
 
     constexpr bool operator<(const Point& rhs) const noexcept
     {
-        return (x < rhs.x) && (x < rhs.y);
+        return (x < rhs.x) || ((x == rhs.x) && (y < rhs.y));
     }
 
     constexpr bool operator>(const Point& rhs) const noexcept
     {
-        return not(*this < rhs);
+        return not(*this <= rhs);
     }
     constexpr bool operator<=(const Point& rhs) const noexcept
     {

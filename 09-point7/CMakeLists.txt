@@ -59,6 +59,12 @@ if(MSVC)
     add_definitions(/wd4267)
     add_definitions(/wd4505)
     add_definitions(/await) # enable coroutine support
+
+    # Use sane and nice C++ for MSVC.
+    # This makes alternative tokens (not, and, ...) as actual keywords and
+    # enables more conformant C++ in general
+    add_definitions(/permissive-)
+
     
 else()
     add_definitions(-DIS_MSVC=false)

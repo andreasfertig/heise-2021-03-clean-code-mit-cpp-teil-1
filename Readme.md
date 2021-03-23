@@ -1,4 +1,4 @@
-# Companion source code for "Clean Code mit C++20"
+# Companion source code for "Clean Code mit C++20, Teil 1"
 
 
 [![Build Status](https://github.com/andreasfertig/heise-2021-03-clean-code-mit-cpp-teil-1/workflows/ci/badge.svg)](https://github.com/andreasfertig/heise-2021-03-clean-code-mit-cpp-teil-1/actions/) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE.txt) 
@@ -6,7 +6,7 @@
 
 ## Code examples
 
-This repository contains runnable source code examples from the article [Clean Code mit C++20](https://www.heise.de/select/ix/2021/03), by [Andreas Fertig](https://andreasfertig.info).
+This repository contains runnable source code examples from the article [Clean Code mit C++20, Teil 1](https://www.heise.de/select/ix/2021/03), by [Andreas Fertig](https://andreasfertig.info).
 
 ### The layout of the examples
 

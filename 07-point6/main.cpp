@@ -1,13 +1,6 @@
 // Copyright (c) Andreas Fertig.
 // SPDX-License-Identifier: MIT
 
-
-
-#if defined (_MSC_VER)
-#  define not !
-#endif /* MSVC */
-
-
 #include <compare>
 
 struct Point
@@ -22,6 +15,7 @@ struct Point
 constexpr Point a{2, 3};
 constexpr Point b{2, 3};
 constexpr Point c{3, 3};
+constexpr Point d{2, 4};
 
 static_assert(a == b);
 static_assert(not(a != b));
@@ -36,5 +30,8 @@ static_assert(c >= a);
 
 static_assert(a <= b);
 static_assert(a >= b);
+
+static_assert(a <= d);
+static_assert(not(a >= d));
 
 int main() {}

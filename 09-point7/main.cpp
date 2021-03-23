@@ -1,13 +1,6 @@
 // Copyright (c) Andreas Fertig.
 // SPDX-License-Identifier: MIT
 
-
-
-#if defined (_MSC_VER)
-#  define not !
-#endif /* MSVC */
-
-
 #include <compare>
 
 // fake of QPoint to drop the dependency
@@ -38,7 +31,8 @@ constexpr auto operator<=>(const QPoint& lhs, const Point& rhs) noexcept
 {
     if(lhs == rhs) {
         return std::strong_ordering::equal;
-    } else if((lhs.x() < rhs.x) && (lhs.x() < rhs.y)) {
+    } else if((lhs.x() < rhs.x) ||
+              ((lhs.x() == rhs.x) && (lhs.y() < rhs.y))) {
         return std::strong_ordering::less;
     }
 
@@ -48,11 +42,15 @@ constexpr auto operator<=>(const QPoint& lhs, const Point& rhs) noexcept
 constexpr Point a{2, 3};
 constexpr Point b{2, 3};
 constexpr Point c{3, 3};
+constexpr Point d{2, 4};
 
 static_assert(a == b);
 static_assert(not(a != b));
 static_assert(not(a == c));
 static_assert(a != c);
+
+static_assert(a <= d);
+static_assert(not(a >= d));
 
 constexpr QPoint op{2, 3};
 constexpr QPoint op2{4, 3};

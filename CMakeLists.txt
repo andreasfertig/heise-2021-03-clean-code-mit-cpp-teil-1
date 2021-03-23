@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.16.2 FATAL_ERROR)
 
-project("Clean Code mit C++20" CXX)
+project("Clean Code mit C++20, Teil 1" CXX)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
